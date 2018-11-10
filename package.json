@@ -1,0 +1,26 @@
+{
+    "name": "bpftrace",
+    "displayName": "bpftrace",
+    "description": "bpftrace (syntax highlighting only)",
+    "version": "0.0.1",
+    "publisher": "bolinfest",
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "bpftrace",
+            "aliases": ["bpftrace", "bpftrace"],
+            "extensions": [".bt"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "bpftrace",
+            "scopeName": "source.bpftrace",
+            "path": "./syntaxes/bpftrace.tmLanguage.json"
+        }]
+    }
+}
