@@ -6,6 +6,9 @@
       "include": "#shebang"
     },
     {
+      "include": "#preprocessor"
+    },
+    {
       "include": "#comments"
     },
     {
@@ -42,8 +45,15 @@
 	"repository": {
     "shebang": {
       "patterns": [{
+        "name": "meta.shebang",
+        "begin": "^#!",
+        "end": "$"
+      }]
+    },
+    "preprocessor": {
+      "patterns": [{
         "name": "meta.preprocessor",
-        "begin": "#!",
+        "begin": "^#[^!]",
         "end": "$"
       }]
     },
