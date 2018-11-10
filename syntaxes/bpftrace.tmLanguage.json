@@ -2,20 +2,139 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "bpftrace",
 	"patterns": [
+    {
+      "include": "#shebang"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#map"
+    },
+    {
+      "include": "#var"
+    },
+    {
+      "include": "#builtins"
+    },
+    {
+      "include": "#pred"
+    },
 		{
 			"include": "#keywords"
-		},
+    },
+    {
+      "include": "#operator"
+    },
+    {
+      "include": "#path"
+    },
 		{
 			"include": "#strings"
-		}
+    },
+    {
+      "include": "#int"
+    },
+    {
+      "include": "#ident"
+    }
 	],
 	"repository": {
+    "shebang": {
+      "patterns": [{
+        "name": "meta.preprocessor",
+        "begin": "#!",
+        "end": "$"
+      }]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "keyword.control.builtin.variable",
+          "match": "\\b(pid|tid|uid|gid|nsecs|cpu|comm|stack|ustack|arg[0-9]|retval|func|name|curtask|rand|cgroup)\\b"
+        },
+        {
+          "name": "keyword.control.builtin.function",
+          "match": "\\b(printf|time|join|str|sym|usym|kaddr|uaddr|reg|system|exit|cgroupid)\\b"
+        },
+        {
+          "name": "keyword.control.builtin.mapfunction",
+          "match": "\\b(count|sum|avg|min|max|stats|hist|list|delete|print|clear|zero)\\b"
+        }
+      ]
+    },
+    "path": {
+      "patterns": [
+        {
+          "name": "variable.other",
+          "match": ":(\\.|[_\\-\\./a-zA-Z0-9])*:"
+        }
+      ]
+    },
+    "pred": {
+      "patterns": [
+        {
+          "name": "keyword.other",
+          "match": "/[ \\r\\t\\n]*[/{]"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.block",
+          "begin": "/\\*",
+          "end": "\\*/"
+        },
+        {
+          "name": "comment.line",
+          "begin": "//",
+          "end": "\\n"
+        }
+      ]
+    },
+    "ident": {
+      "patterns": [{
+        "name": "variable.name",
+        "match": "[_a-zA-Z][_a-zA-Z0-9]*"
+      }]
+    },
+    "map": {
+      "patterns": [{
+        "name": "variable.name.map",
+        "match": "@[_a-zA-Z][_a-zA-Z0-9]*|@"
+      }]
+    },
+    "var": {
+      "patterns": [{
+        "name": "variable.name.var",
+        "match": "\\$[_a-zA-Z][_a-zA-Z0-9]*"
+      }]
+    },
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.bpftrace",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(if|else)\\b"
 			}]
-		},
+    },
+    "operator": {
+      "patterns": [
+        {
+          "name": "keyword.operator",
+          "match": "->"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "(&&|\\|\\|>>|<<)"
+        }
+      ]
+    },
+    "int": {
+      "patterns": [{
+        "name": "constant.numeric",
+        "match": "[0-9]+|0[xX][0-9a-fA-F]+"
+      }]
+    },
 		"strings": {
 			"name": "string.quoted.double.bpftrace",
 			"begin": "\"",
