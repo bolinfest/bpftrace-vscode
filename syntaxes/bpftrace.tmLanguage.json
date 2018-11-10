@@ -41,6 +41,9 @@
     },
     {
       "include": "#ident"
+    },
+    {
+      "include": "#brace"
     }
 	],
 	"repository": {
@@ -152,7 +155,19 @@
         },
         {
           "name": "keyword.operator",
-          "match": "(&&|\\|\\||>>|<<)"
+          "match": "(&&|\\|\\||>>|<<|==|!=|<=|>=)"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "(&|\\||>|<|=|\\+|-|\\*|/|%|\\^|!|~|\\?|\\.|,|:|;)"
+        }
+      ]
+    },
+    "brace": {
+      "patterns": [
+        {
+          "name": "punctuation",
+          "match": "(\\{|\\}|\\[|\\]|\\(|\\))"
         }
       ]
     },
