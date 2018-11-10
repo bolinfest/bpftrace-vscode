@@ -122,10 +122,16 @@
       }]
     },
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.bpftrace",
-				"match": "\\b(if|else)\\b"
-			}]
+			"patterns": [
+        {
+          "name": "keyword.control",
+          "match": "\\b(if|else)\\b"
+        },
+        {
+          "name": "keyword.other",
+          "match": "\\b(struct|union)\\b"
+        }
+      ]
     },
     "operator": {
       "patterns": [
