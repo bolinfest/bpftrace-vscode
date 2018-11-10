@@ -112,13 +112,23 @@
     "map": {
       "patterns": [{
         "name": "variable.name.map",
-        "match": "@[_a-zA-Z][_a-zA-Z0-9]*|@"
+        "match": "(@)([_a-zA-Z][_a-zA-Z0-9]*)?",
+        "captures": {
+          "1": {
+            "name": "punctuation.definition"
+          }
+        }
       }]
     },
     "var": {
       "patterns": [{
         "name": "variable.name.var",
-        "match": "\\$[_a-zA-Z][_a-zA-Z0-9]*"
+        "match": "(\\$)[_a-zA-Z][_a-zA-Z0-9]*",
+        "captures": {
+          "1": {
+            "name": "punctuation.definition"
+          }
+        }
       }]
     },
 		"keywords": {
