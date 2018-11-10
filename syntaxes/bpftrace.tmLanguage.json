@@ -1,8 +1,8 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "bpftrace",
-	"scopeName": "source.bpftrace",
-	"patterns": [
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "bpftrace",
+  "scopeName": "source.bpftrace",
+  "patterns": [
     {
       "include": "#shebang"
     },
@@ -24,8 +24,8 @@
     {
       "include": "#pred"
     },
-		{
-			"include": "#keywords"
+    {
+      "include": "#keywords"
     },
     {
       "include": "#operator"
@@ -33,8 +33,8 @@
     {
       "include": "#path"
     },
-		{
-			"include": "#strings"
+    {
+      "include": "#strings"
     },
     {
       "include": "#int"
@@ -45,8 +45,8 @@
     {
       "include": "#brace"
     }
-	],
-	"repository": {
+  ],
+  "repository": {
     "shebang": {
       "patterns": [{
         "name": "meta.shebang",
@@ -135,8 +135,8 @@
         }
       }]
     },
-		"keywords": {
-			"patterns": [
+    "keywords": {
+      "patterns": [
         {
           "name": "keyword.control",
           "match": "\\b(if|else)\\b"
@@ -177,16 +177,16 @@
         "match": "[0-9]+|0[xX][0-9a-fA-F]+"
       }]
     },
-		"strings": {
-			"name": "string.quoted.double.bpftrace",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.bpftrace",
-					"match": "\\\\."
-				}
-			]
-		}
-	}
+    "strings": {
+      "name": "string.quoted.double.bpftrace",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.bpftrace",
+          "match": "\\\\."
+        }
+      ]
+    }
+  }
 }
