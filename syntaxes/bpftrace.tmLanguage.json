@@ -1,6 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "bpftrace",
+	"scopeName": "source.bpftrace",
 	"patterns": [
     {
       "include": "#shebang"
@@ -172,6 +173,5 @@
 				}
 			]
 		}
-	},
-	"scopeName": "source.bpftrace"
+	}
 }
